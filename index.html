@@ -1,67 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BT7</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="container"> 
-      <div class="row_input">
-        <div class="textBox">
-          <span>UserID</span>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form--register">
+        <h1 style="margin-bottom: 20px;text-align: center;">Registration Form</h1>
+        <div class="row">
+            <div class="col1">
+                User ID: 
+            </div>
+            <div class="col2">
+                <input type="text" class="col-input--s" name="txtUserID" id="txtUserID" required><span id="txtNotificationID"></span>
+            </div>
+            
         </div>
-        <input class='form_demo'  type="text" id="userID"  maxlength="12" />
-      </div>
-      <div class="row_input">
-        <div class="textBox">
-          <span>Password</span>
+        <div class="row">
+            <div class="col1">
+                PassWord: 
+            </div>
+            <div class="col2">
+                <input type="password" class="col-input--s" name="txtPassWord" id="txtPassWord"><span id="txtNotificationPW"></span>
+            </div>
         </div>
-        <input class='form_demo'  type="password" id="password"  maxlength="12" />
-      </div>
-      <div class="row_input">
-        <div class="textBox">
-          <span>Name</span>
+        <div class="row">
+            <div class="col1">
+                Name: 
+            </div>
+            <div class="col2">
+                <input type="text" class="col-input--l" name="txtName" id="txtName"><span id="txtNotificationName"></span>
+            </div>
         </div>
-        <input class='form_demo'  type="text" id="name" />
-      </div>
-      <div class="row_input">
-        <div class="textBox">
-          <span>Address</span>
+        <div class="row">
+            <div class="col1">
+                Address: 
+            </div>
+            <div class="col2">
+                <input type="Text" class="col-input--l" name="txtAddress" id="txtAddress">
+            </div>
         </div>
-        <input class='form_demo'  type="text" id="address" />
-      </div>
-      <div class="row_input">
-        <div class="textBox">
-          <span>Country</span>
+        <div class="row">
+            <div class="col1">
+                Country: 
+            </div>
+            <div class="col2">
+                <select style="width: 63%;height: 26px;" name="optCountry" id="optCountry">
+                    <option value="optCountry" disabled selected hidden>(Please select your country)</option>
+                    <option value="optCountry">VietNam</option>
+                    <option value="optCountry">Korean</option>
+                    <option value="optCountry">Japan</option>
+                    <option value="optCountry">Singapore</option>
+                    <option value="optCountry">India</option>
+                    <option value="optCountry">China</option>
+                </select>
+            </div>
         </div>
-        <select name="cars" id="cars" class="form_demo">
-            <option value="" disabled selected>Choose your Country</option>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
-          </select>
-      </div>
-      <div class="row_input">
-        <div class="textBox">
-          <span>zip code</span>
+        <div class="row">
+            <div class="col1">
+                ZIP Code: 
+            </div>
+            <div class="col2">
+                <input type="number" class="col-input--m" name="txtZipCode" id="txtZipCode">
+            </div>
         </div>
-        <input class='form_demo'  type="text" id="zipcode" />
-      </div>
-      <div class="row_input">
-        <div class="textBox">
-          <span>Sex</span>
+        <div class="row">
+            <div class="col1">
+                Email: 
+            </div>
+            <div class="col2">
+                <input type="email" class="col-input--l" name="txtEmail" id="txtEmail"><span id="txtNotificationEmail"></span>
+            </div>
         </div>
-        <input class='form_demo'  type="checkbox" id="male"  name="male" value="male"  onchange='toggleCheckbox("male","female")'/>
-        <label for="male">Male</label><br>
-        <input class='form_demo'  type="checkbox" id="female"  name="female" value="female"  onchange='toggleCheckbox("female","male")'/>
-        <label for="female">Female</label><br>
-      </div>
-      <button type="submit" onclick="handleSubmit()">Submit</button>
-    </div> 
-    <script src="./main.js"></script>
-  </body>
+        <div class="row">
+            <div class="col1">
+                Sex: 
+            </div>
+            <div class="col2">
+                <input type="radio" name="radSex" id="radSex">Male
+                <input type="radio" name="radSex" id="radSex">Female
+            </div>
+        </div>
+        <div class="row">
+            <div class="col1">
+                Language: 
+            </div>
+            <div class="col2">
+                <input type="checkbox" name="boxLanguage" id="boxLanguage" onclick="onlyOne(this)">English
+                <input type="checkbox" name="boxLanguage" id="boxLanguage" onclick="onlyOne(this)">Non English
+            </div>
+        </div>
+        <div class="row">
+            <div class="col1">
+                About: 
+            </div>
+            <div class="col2">
+                <textarea class="col-input--xl" name="txtAbout" id="txtAbout" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="row1">
+            <input class="btnSubmit" type="submit" value="Submit" id="btnSubmit">
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/jQuery.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+</body>
 </html>
